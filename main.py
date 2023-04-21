@@ -60,11 +60,7 @@ def mess(message):
     global inf
     get_message_bot = message.text.strip().lower()
 
-    # if get_message_bot == "больше 1100 квт":
-    #     markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-    #     bot.send_message(id, f'Заявка 1000+\nПользователь:\n{name1, name2}\nНомер телефона:\n{number}')
-    #     final_message = "Заявки с мощностью генератора более 1100 кВт лучше обсудить с инженером.\nЯ передал вашу заяшку, сейчас вам напишет инженер."
-
+    
     if get_message_bot == "я девушка":
         inf.append(get_message_bot)
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
