@@ -344,7 +344,14 @@ def mess(message):
         print(inf)
         final_message = "раз два три"
 
-        #ВОТ СЮДА КИДАЙ СПИСОК СЛОВ
+        requests_list = ["заказать", "к оформлению", "к пацанам", "корейцы", "аниме", "да", "нет", "🟣", "⚪️", "⚫️",
+                         "🔵", "🟢", "🟡", "🔴", "xl", "l", "m", "s", "я парень", "я девушка"]
+
+        if get_message_bot not in requests_list:
+            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+            button_phone = types.KeyboardButton(text="Отправить мой телефон", request_contact=True)
+            markup.add(button_phone)
+            final_message = "Что-то пошло не так...\nПожалуйста, жмите только на кнопки🥺.\nДавайте попробем сначала"
 
     bot.send_message(message.chat.id, final_message, parse_mode='html', reply_markup=markup)
 
