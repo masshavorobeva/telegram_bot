@@ -2,10 +2,8 @@ import telebot
 from telebot import types
 
 
-bot = telebot.TeleBot('6263372113:AAGRZDGb85N1tgQQtLLT9Sgn2KNKrtxggZA')
-count = 0
+bot = telebot.TeleBot('5888347857:AAHyqkDGKk5EuW-otOrjso30Z-qub4pzuUo')
 spis = []
-fil = 0
 chet = 0
 number = []
 name1 = []
@@ -208,9 +206,9 @@ def mess(message):
     if get_message_bot == "нет":
         inf.append('Принта нет')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-        btn1 = types.KeyboardButton('К оформлению')
+        btn1 = types.KeyboardButton('Заказать')
         markup.add(btn1)
-        final_message = "Окей. Ваша футболка выглядит так"
+        final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 999 рублей</b>"
         if 'red' in spis:
             file = open('color/red.jpg', 'rb')
             bot.send_photo(message.chat.id, file)
@@ -237,16 +235,44 @@ def mess(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Аниме')
         btn2 = types.KeyboardButton('Корейцы')
-        btn3 = types.KeyboardButton('К пацанами')
+        btn3 = types.KeyboardButton('Дрилл')
         markup.add(btn1, btn2, btn3)
         final_message = "В каком стиле должен быть ваш принт?"
+
+    if get_message_bot == "дрилл":
+        inf.append('Принт с мемами')
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+        btn1 = types.KeyboardButton('Заказать')
+        markup.add(btn1)
+        final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
+        if 'blue' in spis:
+            file = open('drill/blue3.jpeg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'red' in spis:
+            file = open('drill/red3.jpg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'green' in spis:
+            file = open('drill/green3.jpg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'black' in spis:
+            file = open('drill/black3.jpg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'purple' in spis:
+            file = open('drill/purple3.jpeg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'yellow' in spis:
+            file = open('drill/yellow3.jpg', 'rb')
+            bot.send_photo(message.chat.id, file)
+        if 'white' in spis:
+            file = open('drill/white3.jpeg', 'rb')
+            bot.send_photo(message.chat.id, file)
 
     if get_message_bot == "аниме":
         inf.append('Принт с Аниме')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
         markup.add(btn1)
-        final_message = "Хорошо. Ваша футболка будет выглядеть вот так"
+        final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
         if 'blue' in spis:
             file = open('anime/blue_anime.jpg', 'rb')
             bot.send_photo(message.chat.id, file)
@@ -274,7 +300,7 @@ def mess(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
         markup.add(btn1)
-        final_message = "Хорошо. Ваша футболка будет выглядеть вот так"
+        final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
         if 'red' in spis:
             file = open('korean/red2.jpg', 'rb')
             bot.send_photo(message.chat.id, file)
@@ -297,62 +323,18 @@ def mess(message):
             file = open('korean/purple2.jpg', 'rb')
             bot.send_photo(message.chat.id, file)
 
-    if get_message_bot == "к пацанам":
-        inf.append('Принт с мемами')
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-        btn1 = types.KeyboardButton('Заказать')
-        markup.add(btn1)
-        final_message = "Хорошо. Ваша футболка будет выглядеть вот так"
-        if 'blue' in spis:
-            file = open('drill/blue3.jpeg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'red' in spis:
-            file = open('drill/red3.jpg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'green' in spis:
-            file = open('drill/green3.jpg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'black' in spis:
-            file = open('drill/black3.jpg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'purple' in spis:
-            file = open('drill/purple3.jpeg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'yellow' in spis:
-            file = open('drill/yellow3.jpg', 'rb')
-            bot.send_photo(message.chat.id, file)
-        if 'white' in spis:
-            file = open('drill/white3.jpeg', 'rb')
-            bot.send_photo(message.chat.id, file)
-
-
-    if get_message_bot == "к оформлению":
-        chet += 1
-        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-        btn1 = types.KeyboardButton('К оформлению')
-        markup.add(btn1)
-        bot.send_message(578898951, f"Заявка {chet}\nПользователь:\n{name1, name2}\nНомер:\n+{number}\n@{nik}\n\n{inf[0]}\nРазмер:{inf[1]}\nцвет - {inf[2]}\n{inf[3]}")
-        print(inf)
-        final_message = "три два раз"
 
     if get_message_bot == "заказать":
         chet += 1
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-        btn1 = types.KeyboardButton('К оформлению')
-        markup.add(btn1)
-        bot.send_message(578898951, f"Заявка {chet}\nПользователь:\n{name1, name2}\nНомер:\n+{number}\n@{nik}\n\n{inf[0]}\nРазмер:{inf[1]}\nцвет - {inf[2]}\n{inf[3]}")
-        print(inf)
-        final_message = "раз два три"
+        bot.send_message(578898951, f"Заявка {chet}\nПользователь:\n{name1, name2}\nНомер:\n+{number}\n@{nik}\n\n{inf[0]}\nРазмер:{inf[1]}\nЦвет - {inf[2]}\n{inf[3]}")
+        final_message = "Благодарим за использвание нашего телеграм бота.\nВаш заказ уже находится на рассмотрении.\nВ скором времени с вами свяжуться для уточнения деталей.Ожидайте обратной связи"
 
-
-        requests_list = ["заказать", "к оформлению", "к пацанам", "корейцы", "аниме", "да", "нет", "🟣", "⚪️", "⚫️",
-                         "🔵", "🟢", "🟡", "🔴", "xl", "l", "m", "s", "я парень", "я девушка"]
-
-        if get_message_bot not in requests_list:
-            markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-            button_phone = types.KeyboardButton(text="Отправить мой телефон", request_contact=True)
-            markup.add(button_phone)
-            final_message = "Что-то пошло не так...\nПожалуйста, жмите только на кнопки🥺.\nДавайте попробем сначала"
+    if get_message_bot not in ["заказать", "дрилл", "корейцы", "аниме", "да", "нет", "🟣", "⚪️","⚫️", "🔵", "🟢", "🟡", "🔴", "xl", "l", "m", "s", "я парень", "я девушка"]:
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+        button_phone = types.KeyboardButton(text="Отправить мой телефон", request_contact=True)
+        markup.add(button_phone)
+        final_message = "Что-то пошло не так...\nПожалуйста, жмите только на кнопки🥺.\nДавайте попробем сначала"
 
     bot.send_message(message.chat.id, final_message, parse_mode='html', reply_markup=markup)
 
