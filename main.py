@@ -207,7 +207,8 @@ def mess(message):
         inf.append('Принта нет')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
-        markup.add(btn1)
+        btn2 = types.KeyboardButton('Изменить выбор')
+        markup.add(btn1, btn2)
         final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 999 рублей</b>"
         if 'red' in spis:
             file = open('color/red.jpg', 'rb')
@@ -243,7 +244,8 @@ def mess(message):
         inf.append('Принт с мемами')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
-        markup.add(btn1)
+        btn2 = types.KeyboardButton('Изменить выбор')
+        markup.add(btn1, btn2)
         final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
         if 'blue' in spis:
             file = open('drill/blue3.jpeg', 'rb')
@@ -271,7 +273,8 @@ def mess(message):
         inf.append('Принт с Аниме')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
-        markup.add(btn1)
+        btn2 = types.KeyboardButton('Изменить выбор')
+        markup.add(btn1, btn2)
         final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
         if 'blue' in spis:
             file = open('anime/blue_anime.jpg', 'rb')
@@ -299,7 +302,8 @@ def mess(message):
         inf.append('Принт с Корейцами')
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
         btn1 = types.KeyboardButton('Заказать')
-        markup.add(btn1)
+        btn2 = types.KeyboardButton('Изменить выбор')
+        markup.add(btn1, btn2)
         final_message = "Коллекция: Spring 2023 - Summer 2023\nСостав: 100% хлопок\nСтиль: Повседневный\nСилует: Свободный\n<b>Цена: 1299 рублей</b>"
         if 'red' in spis:
             file = open('korean/red2.jpg', 'rb')
@@ -327,7 +331,7 @@ def mess(message):
     if get_message_bot == "заказать":
         chet += 1
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
-        bot.send_message(578898951, f"Заявка {chet}\nПользователь:\n{name1, name2}\nНомер:\n+{number}\n@{nik}\n\n{inf[0]}\nРазмер:{inf[1]}\nЦвет - {inf[2]}\n{inf[3]}")
+        bot.send_message(731746986, f"Заявка {chet}\nПользователь:\n{name1, name2}\nНомер:\n+{number}\n@{nik}\n\n{inf[0]}\nРазмер:{inf[1]}\nЦвет - {inf[2]}\n{inf[3]}")
         final_message = "Благодарим за использвание нашего телеграм бота.\nВаш заказ уже находится на рассмотрении.\nВ скором времени с вами свяжуться для уточнения деталей.Ожидайте обратной связи"
 
     if get_message_bot not in ["заказать", "дрилл", "корейцы", "аниме", "да", "нет", "🟣", "⚪️","⚫️", "🔵", "🟢", "🟡", "🔴", "xl", "l", "m", "s", "я парень", "я девушка"]:
@@ -335,6 +339,15 @@ def mess(message):
         button_phone = types.KeyboardButton(text="Отправить мой телефон", request_contact=True)
         markup.add(button_phone)
         final_message = "Что-то пошло не так...\nПожалуйста, жмите только на кнопки🥺.\nДавайте попробем сначала"
+
+    if get_message_bot == "изменить выбор":
+        spis = []
+        inf = []
+        markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=3)
+        btn1 = types.KeyboardButton('Я парень')
+        btn2 = types.KeyboardButton('Я девушка')
+        markup.add(btn1, btn2)
+        final_message = "Отлично!\nДавайте определимся с полом"
 
     bot.send_message(message.chat.id, final_message, parse_mode='html', reply_markup=markup)
 
