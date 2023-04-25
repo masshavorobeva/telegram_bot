@@ -2,7 +2,7 @@ import telebot
 from telebot import types
 
 
-bot = telebot.TeleBot('5888347857:AAHyqkDGKk5EuW-otOrjso30Z-qub4pzuUo')
+bot = telebot.TeleBot('')
 spis = []
 chet = 0
 number = []
